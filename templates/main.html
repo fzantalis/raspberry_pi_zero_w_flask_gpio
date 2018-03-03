@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+<head>
+   <title>RPi zero w GPIO</title>
+   <!-- Latest compiled and minified CSS -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/main.css') }}">
+</head>
+
+<body>
+   <h1>RPi zero w GPIO</h1>
+
+<div class="gpio_frame">
+    <table class="gpio_frame">
+      <tr>
+        <td class="descl">Power</td>
+        <td class="power v3">3V3</td>
+        <td class="pin_empty"><i></i></td>
+        <td class="pin_empty"><i></i></td> 
+        <td class="power v5">5V</td>
+        <td class="descr">Power</td>
+      </tr>
+      <tr>
+        <td class="descl">SDA I2C</td>
+        <td class="gpio">{{ pins[2].name }}</td>
+        <td class="pin">{% if pins[2].state == true %}<a href="/{{2}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{2}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="pin_empty"><i></i></td> 
+        <td class="power v5">5V</td>
+        <td class="descr">Power</td>
+      </tr>
+      <tr>
+        <td class="descl">SCL I2C</td>
+        <td class="gpio">{{ pins[3].name }}</td>
+        <td class="pin">{% if pins[3].state == true %}<a href="/{{3}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{3}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="pin_empty"><i></i></td> 
+        <td class="ground">GROUND</td>
+        <td class="descr"></td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="gpio">{{ pins[4].name }}</td>
+        <td class="pin">{% if pins[4].state == true %}<a href="/{{4}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{4}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="pin">{% if pins[14].state == true %}<a href="/{{14}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{14}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[14].name }}</td>
+	<td class="descr">UART0_TXD</td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="ground">GROUND</td>
+	<td class="pin_empty"><i></i></td>
+        <td class="pin">{% if pins[15].state == true %}<a href="/{{15}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{15}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[15].name }}</td>
+	<td class="descr">UART0_RXD</td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="gpio">{{ pins[17].name }}</td>
+        <td class="pin">{% if pins[17].state == true %}<a href="/{{17}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{17}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="pin">{% if pins[18].state == true %}<a href="/{{18}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{18}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[18].name }}</td>
+	<td class="descr">PCM_CLK</td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="gpio">{{ pins[27].name }}</td>
+        <td class="pin">{% if pins[27].state == true %}<a href="/{{27}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{27}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+	<td class="pin_empty"><i></i></td> 
+        <td class="ground">GROUND</td>
+        <td class="descr"></td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="gpio">{{ pins[22].name }}</td>
+        <td class="pin">{% if pins[22].state == true %}<a href="/{{22}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{22}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="pin">{% if pins[23].state == true %}<a href="/{{23}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{23}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[23].name }}</td>
+	<td class="descr"></td>
+      </tr>
+      <tr>
+        <td class="descl">Power</td>
+        <td class="power v3">3V3</td>
+        <td class="pin_empty"><i></i></td>
+        <td class="pin">{% if pins[24].state == true %}<a href="/{{24}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{24}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[24].name }}</td>
+	<td class="descr"></td>
+      </tr>
+      <tr>
+        <td class="descl">MOSI</td>
+        <td class="gpio">{{ pins[10].name }}</td>
+        <td class="pin">{% if pins[10].state == true %}<a href="/{{10}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{10}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+	<td class="pin_empty"><i></i></td> 
+        <td class="ground">GROUND</td>
+        <td class="descr"></td>
+      </tr>
+      <tr>
+        <td class="descl">MISO</td>
+        <td class="gpio">{{ pins[9].name }}</td>
+        <td class="pin">{% if pins[9].state == true %}<a href="/{{9}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{9}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="pin">{% if pins[25].state == true %}<a href="/{{25}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{25}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[25].name }}</td>
+	<td class="descr"></td>
+      </tr>
+      <tr>
+        <td class="descl">SCLK</td>
+        <td class="gpio">{{ pins[11].name }}</td>
+        <td class="pin">{% if pins[11].state == true %}<a href="/{{11}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{11}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="pin">{% if pins[8].state == true %}<a href="/{{8}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{8}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[8].name }}</td>
+	<td class="descr">CE0_N</td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="ground">GROUND</td>
+	<td class="pin_empty"><i></i></td>
+        <td class="pin">{% if pins[7].state == true %}<a href="/{{7}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{7}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[7].name }}</td>
+	<td class="descr">CE1_N</td>
+      </tr>
+      <tr>
+        <td class="descl">IC2 ID EEPROM</td>
+        <td class="eeprom">ID_SD</td>
+	<td class="pin_empty"><i></i></td>
+        <td class="pin_empty"><i></i></td>
+        <td class="eeprom">ID_SC</td>
+	<td class="descr">IC2 ID EEPROM</td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="gpio">{{ pins[5].name }}</td>
+        <td class="pin">{% if pins[5].state == true %}<a href="/{{5}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{5}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+	<td class="pin_empty"><i></i></td> 
+        <td class="ground">GROUND</td>
+        <td class="descr"></td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="gpio">{{ pins[6].name }}</td>
+	<td class="pin">{% if pins[6].state == true %}<a href="/{{6}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{6}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+	<td class="pin">{% if pins[12].state == true %}<a href="/{{12}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{12}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[12].name }}</td>
+	<td class="descr"></td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="gpio">{{ pins[13].name }}</td>
+        <td class="pin">{% if pins[13].state == true %}<a href="/{{13}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{13}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+	<td class="pin_empty"><i></i></td> 
+        <td class="ground">GROUND</td>
+        <td class="descr"></td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="gpio">{{ pins[19].name }}</td>
+	<td class="pin">{% if pins[19].state == true %}<a href="/{{19}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{19}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+	<td class="pin">{% if pins[16].state == true %}<a href="/{{16}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{16}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[16].name }}</td>
+	<td class="descr"></td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="gpio">{{ pins[26].name }}</td>
+	<td class="pin">{% if pins[26].state == true %}<a href="/{{26}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{26}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+	<td class="pin">{% if pins[20].state == true %}<a href="/{{20}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{20}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[20].name }}</td>
+	<td class="descr"></td>
+      </tr>
+      <tr>
+        <td class="descl"></td>
+        <td class="ground">GROUND</td>
+	<td class="pin_empty"><i></i></td>
+        <td class="pin">{% if pins[21].state == true %}<a href="/{{21}}/off" class="opened" ><p></p></a>{% else %}<a href="/{{21}}/on" class="closed" ><i></i></a>
+{% endif %}</td>
+        <td class="gpio">{{ pins[21].name }}</td>
+	<td class="descr"></td>
+      </tr>
+    </table> 
+
+</div>
+</body>
+</html>
+
+
