@@ -11,4 +11,4 @@ This is a set of files, creating a complete flask setup, in order to control a r
 * static/css/main.css
 
 ### Template Example
-![GPIO](https://github.com/fzantalis/raspberry_pi_zero_w_flask_gpio/gpio.png)
+![GPIO](https://github.com/fzantalis/raspberry_pi_zero_w_flask_gpio/blob/master/gpio.png)
