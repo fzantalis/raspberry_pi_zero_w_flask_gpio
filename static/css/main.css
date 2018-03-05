@@ -1,124 +1,123 @@
 
 a:link, a:visited {
-display: block;
-  width: 54px;
-  height: 32px;
-  margin: 0px auto;
-  border-radius: 100px;
-  transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
+    display: block;
+    width: 54px;
+    height: 32px;
+    margin: 0px auto;
+    border-radius: 100px;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
-
 
 a:hover, a:active {
-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.20);
-transform: scale(1.01);
-display: block;
-  width: 54px;
-  height: 32px;
-  margin: 0px auto;
-  border-radius: 100px;
-  transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.20);  
+    transform: scale(1.01);
+    display: block;
+    width: 54px;
+    height: 32px;
+    margin: 0px auto;
+    border-radius: 100px;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
 }
+
 .opened {
-background-color: #49ef55;
+    background-color: #49ef55;
 }
+
 .closed {
-background-color: #ef4a4a;
+    background-color: #ef4a4a;
 }
 
 p {
-  height: 28px;
-  width: 28px;
-  background: #ffffff;
-  display: inline-block;
-  border-radius: 100px;
-  margin-top: 2px;
-  margin-left: 2px;
-  transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  pointer-events: none;
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-  margin-left: 24px;
+    height: 28px;
+    width: 28px;
+    background: #ffffff;
+    display: inline-block;
+    border-radius: 100px;
+    margin-top: 2px;
+    margin-left: 2px;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    pointer-events: none;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    margin-left: 24px;
 }
 
 i {
-  height: 28px;
-  width: 28px;
-  background: #ffffff;
-  display: inline-block;
-  border-radius: 100px;
-  margin-top: 2px;
-  margin-left: 2px;
-  transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  pointer-events: none;
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    height: 28px; 
+    width: 28px;
+    background: #ffffff;
+    display: inline-block;
+    border-radius: 100px;
+    margin-top: 2px;
+    margin-left: 2px;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    pointer-events: none;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
 }
 
 a:active>i {
-	  width: 34px;
-	    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20);
-  
-    }
+    width: 34px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20);
+}
+
 a:hover>i {
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.20);
-  transform: scale(1.01);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.20);
+    transform: scale(1.01);
 }
 
 .gpio {
-width:100px;
-background-color:#759bba;
-text-align:center;
+    width:100px;
+    background-color:#759bba;
+    text-align:center;
 }
 
 .eeprom {
-width:100px;
-background-color:#e8e488;
-text-align:center;
+    width:100px;
+    background-color:#e8e488;
+    text-align:center;
 }
 
 .ground { 
-width:100px;
-background-color:#ccc;
-text-align:center;
+    width:100px;
+    background-color:#ccc;
+    text-align:center;
 }
 
 .power {
-width:100px;
-text-align:center;
+    width:100px;
+    text-align:center;
 }
 
 .v3 {
-background-color:#ce9102;
+    background-color:#ce9102;
 }
 
 .v5 { 
-background-color:#ba2c2c;
+    background-color:#ba2c2c;
 }
 
 .descr {
-text-align: left;
-color: #555;
-width:100px;
+    text-align: left;
+    color: #555;
+    width:100px;
 }
 
 .descl {
-width:100px;
-text-align: right;
-color: #555;
+    width:100px;
+    text-align: right;
+    color: #555;
 } 
 
 .pin {
-width:65px;
-background-color: #1e8420;
+    width:65px;
+    background-color: #1e8420;
 }
 
 .pin_empty {
-width:65px;
-background-color: #1e8420;
-text-align: center;
+    width:65px;
+    background-color: #1e8420;
+    text-align: center;
 }
-
-
